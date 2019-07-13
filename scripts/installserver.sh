@@ -26,9 +26,12 @@ source /etc/profile.d/miguel.sh
 
 # instalar maven
 cd /home
-curl http://ftp.cixug.es/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz --output apache-maven-3.6.1-bin.tar.gz
+curl http://apache.rediris.es/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz --output apache-maven-3.6.1-bin.tar.gz
 tar -zxvf apache-maven-3.6.1-bin.tar.gz
 rm -rf apache-maven-3.6.1-bin.tar.gz
+
+mkdir /home/m2
+ln -s /home/m2 /root/.m2
 
 echo 'export MAVEN_HOME=/home/apache-maven-3.6.1' >> /etc/profile.d/miguel.sh
 echo 'export PATH=$MAVEN_HOME/bin:$PATH' >> /etc/profile.d/miguel.sh
@@ -58,7 +61,6 @@ systemctl start postgresql-11
 
 
 # parametrizar postgresql
-/home/postgres/data/pg_hba.conf
 
 sed -i 's/local   all             all                                     peer/local   all             all                                     trust/g' /home/pgdata/pg_hba.conf
 sed -i 's/host    all             all             127.0.0.1\/32            peer/host    all             all             127.0.0.1\/32            trust/g' /home/pgdata/pg_hba.conf
