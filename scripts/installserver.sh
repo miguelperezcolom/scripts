@@ -1,7 +1,10 @@
 # instalar certificado
+mkdir /root/.ssh
 
 
 # modficar sshdconfig
+# PasswordAuthentication yes
+# PasswordAuthentication no
 
 
 # instalar java
