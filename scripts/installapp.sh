@@ -36,13 +36,13 @@ sed -i "s/xartefacto/$3/g" /home/$1/deploy.sh
 
 
 cd /etc/init.d
-curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/service-txt --output $1
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/service.txt --output $1
 sed -i "s/xappname/$1/g" $1
-sed -i "s/xport/$1/g" $4
+sed -i "s/xport/$4/g" $1
 chkconfig $1 on
 
 
 #ssh root@vps1 'bash -s' < installapp.sh appname
 #ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname'
-#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s demo com.quonext.quotravel quotravel-core 8301'
+#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s demo com.quonext.quotravel quotravel-core 8301 quotravel'
 
