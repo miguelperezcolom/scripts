@@ -64,7 +64,7 @@ systemctl start postgresql-11
 
 # parametrizar postgresql
 sed -i 's/local   all             all                                     peer/local   all             all                                     trust/g' /home/pgdata/pg_hba.conf
-sed -i 's/host    all             all             127.0.0.1\/32            peer/host    all             all             127.0.0.1\/32            trust/g' /home/pgdata/pg_hba.conf
+sed -i 's/host    all             all             127.0.0.1\/32            ident/host    all             all             127.0.0.1\/32            trust/g' /home/pgdata/pg_hba.conf
 systemctl reload postgresql-11
 
 
