@@ -33,13 +33,18 @@ wget https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/d
 sed -i "s/xappname/$1/g" /home/$1/deploy.sh
 sed -i "s/xgrupo/$2/g" /home/$1/deploy.sh
 sed -i "s/xartefacto/$3/g" /home/$1/deploy.sh
+chmod +x /home/$1/deploy.sh
 
 
 cd /etc/init.d
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/service.txt --output $1
 sed -i "s/xappname/$1/g" $1
 sed -i "s/xport/$4/g" $1
+chmod +x $1
 chkconfig $1 on
+
+firewall-cmd --zone=public --add-port=$4/tcp --permanent
+firewall-cmd --reload
 
 
 #ssh root@vps1 'bash -s' < installapp.sh appname
