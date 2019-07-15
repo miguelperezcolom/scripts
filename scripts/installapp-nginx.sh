@@ -21,7 +21,7 @@ sed -i "s/xserver/$4/g" $1.conf
 sed -i "s/xport/$5/g" $1.conf
 service nginx reload
 
-certbot --nginx -d $2.$3
+certbot -n --nginx --redirect --agree-tos --email miguelperezcolom@gmail.com -d $2.$3
 
 #ssh root@vps1 'bash -s' < installapp.sh appname
 #ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname'

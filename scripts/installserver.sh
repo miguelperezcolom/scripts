@@ -42,8 +42,18 @@ source /etc/profile.d/miguel.sh
 # instalar nginx
 yum install -y nginx
 systemctl start nginx
-firewall-cmd --zone=public --add-port=80/tcp --permanent
-firewall-cmd --reload
+###firewall-cmd --zone=public --add-port=80/tcp --permanent
+###firewall-cmd --reload
+
+# instalar certbot
+yum -y install epel-release
+yum -y install certbot-nginx
+crontab -l | { cat; echo "15 3 * * * /usr/bin/certbot renew --quiet"; } | crontab -
+
+# abrir puertos
+firewall-cmd --add-service=http
+firewall-cmd --add-service=https
+firewall-cmd --runtime-to-permanent
 
 # instalar postgresql
 yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
