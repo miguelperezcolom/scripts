@@ -5,6 +5,7 @@
 #2 com.quonext.quotravel
 #3 quotravel-core
 #4 puerto
+#5 puname
 
 createdb -U postgres $1
 mkdir /home/$1
@@ -21,6 +22,12 @@ cd ..
 mkdir wars
 cd ..
 mkdir tmp
+
+wget https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/app.properties
+sed -i "s/xappname/$1/g" /home/$1/app.properties
+sed -i "s/xdatabase/$1/g" /home/$1/app.properties
+sed -i "s/xpuname/$5/g" /home/$1/app.properties
+
 
 wget https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/deploy.sh
 sed -i "s/xappname/$1/g" /home/$1/deploy.sh
