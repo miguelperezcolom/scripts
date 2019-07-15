@@ -1,11 +1,16 @@
 #/bin/sh
 
+display_usage() {
+	echo "Script para instalar aplicaciones."
+	echo -e "\nUsage:\ninstallapp.sh <appname> <groupId> <artifactId> <port> <puname>\n"
+	}
 
-#1 appname
-#2 com.quonext.quotravel
-#3 quotravel-core
-#4 puerto
-#5 puname
+# if less than two arguments supplied, display usage
+if [  $# -le 5 ]
+then
+    display_usage
+    exit 1
+fi
 
 createdb -U postgres $1
 mkdir /home/$1
@@ -49,6 +54,5 @@ firewall-cmd --reload
 
 
 #ssh root@vps1 'bash -s' < installapp.sh appname
-#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname'
-#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s demo com.quonext.quotravel quotravel-core 8301 quotravel'
+#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname groupId artifactId port puname'
 

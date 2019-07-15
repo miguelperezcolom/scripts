@@ -1,5 +1,17 @@
 #/bin/sh
 
+display_usage() {
+	echo "Script para desplegar aplicaciones."
+	echo -e "\nUsage:\ndeploy.sh <version>\n"
+	}
+
+# if less than two arguments supplied, display usage
+if [  $# -le 1 ]
+then
+    display_usage
+    exit 1
+fi
+
 service xappname stop
 
 rm -rfv /home/xappname/jetty/wars/*
@@ -12,7 +24,3 @@ jar -xvf /home/xappname/jetty/wars/*.war
 
 service xappname start
 
-
-# $1 = com.quonext.quotravel
-# $2 = quotravel-core
-# $3 = 0.0.1-SNAPSHOT
