@@ -14,3 +14,9 @@ cp ../oldjetty/webapps/quotravel.xml .
 cd ..
 mkdir tmp
 ./deploy.sh 0.0.1-SNAPSHOT
+
+
+
+#ssh root@vps1 'bash -s' < installapp.sh appname
+#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname'
+
