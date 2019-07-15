@@ -4,7 +4,7 @@ service xappname stop
 
 rm -rfv /home/xappname/jetty/wars/*
 
-mvn -U org.apache.maven.plugins:maven-dependency-plugin:RELEASE:copy -Dartifact=$1:$2:$3:war -DoutputDirectory=/home/xappname/jetty/wars -Dmdep.stripVersion=true
+mvn -U org.apache.maven.plugins:maven-dependency-plugin:RELEASE:copy -Dartifact=xgrupo:xartefacto:$1:war -DoutputDirectory=/home/xappname/jetty/wars -Dmdep.stripVersion=true
 
 mkdir /home/xappname/jetty/wars/root
 cd /home/xappname/jetty/wars/root
