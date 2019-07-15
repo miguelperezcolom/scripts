@@ -40,6 +40,7 @@ cd /etc/init.d
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/service.txt --output $1
 sed -i "s/xappname/$1/g" $1
 sed -i "s/xport/$4/g" $1
+echo "chmodeando"
 chmod +x $1
 chkconfig $1 on
 
