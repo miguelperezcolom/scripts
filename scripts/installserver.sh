@@ -11,6 +11,11 @@ systemctl restart sshd
 
 yum install -y mlocate
 
+
+# instalar wget
+yum install -y wget
+
+
 # instalar java
 
 mkdir /home/jdks
