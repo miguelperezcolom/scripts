@@ -1,0 +1,26 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <profiles>
+        <profile>
+            <id>quonext</id>
+            <repositories>
+                <repository>
+                    <id>quotravel</id>
+                    <name>nuestro repo quonext</name>
+                    <url>http://nexus.quotravel.eu/repository/quonext/</url>
+                </repository>
+                <repository>
+                    <id>mateu-central</id>
+                    <name>el repo de mateu</name>
+                    <url>http://nexus.mateu.io/repository/mateu-central/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>quonext</activeProfile>
+    </activeProfiles>
+</settings>

@@ -1,5 +1,13 @@
 #/bin/sh
 
+
+# appname
+# com.quonext.quotravel
+# quotravel-core
+# 0.0.1-SNAPSHOT
+# dominio
+# puerto
+
 createdb -U postgres $1
 mkdir /home/$1
 cd /home/$1
@@ -9,11 +17,20 @@ mv jetty-distribution-9.4.19.v20190610 jetty
 rm -rf jetty-distribution-9.4.19.v20190610.tar.gz
 cd jetty
 java -jar start.jar --add-to-start=console-capture
+cd webapps
+wget https://raw.githubusercontent.com/miguelperezcolom/scripts/master/jetty/root.xml
+cd ..
 mkdir wars
-cp ../oldjetty/webapps/quotravel.xml .
 cd ..
 mkdir tmp
-./deploy.sh 0.0.1-SNAPSHOT
+
+wget https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/deploy.sh
+sed -i "s/xappname/$1/g" /home/$1/deploy.sh
+sed -i "s/xappname/$1/g" /home/$1/deploy.sh
+sed -i "s/xappname/$1/g" /home/$1/deploy.sh
+sed -i "s/xappname/$1/g" /home/$1/deploy.sh
+
+
 
 
 

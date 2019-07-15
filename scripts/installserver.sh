@@ -2,22 +2,19 @@
 mkdir /root/.ssh
 cd /root/.ssh
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/ssh/authorized_keys2 > authorized_keys
-##chmod 700 /root/.ssh
-##chmod 600 /root/.ssh/authorized_keys
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/authorized_keys
 
 # modficar sshdconfig
 sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 systemctl restart sshd
 
+# instalar utilidades
 yum install -y mlocate
-
-
-# instalar wget
 yum install -y wget
 
 
 # instalar java
-
 mkdir /home/jdks
 cd /home/jdks
 curl https://d3pxv6yz143wms.cloudfront.net/11.0.3.7.1/amazon-corretto-11.0.3.7.1-linux-x64.tar.gz --output amazon-corretto-11.0.3.7.1-linux-x64.tar.gz
@@ -66,7 +63,6 @@ systemctl start postgresql-11
 
 
 # parametrizar postgresql
-
 sed -i 's/local   all             all                                     peer/local   all             all                                     trust/g' /home/pgdata/pg_hba.conf
 sed -i 's/host    all             all             127.0.0.1\/32            peer/host    all             all             127.0.0.1\/32            trust/g' /home/pgdata/pg_hba.conf
 systemctl reload postgresql-11
