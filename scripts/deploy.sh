@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #/bin/sh
 
 display_usage() {

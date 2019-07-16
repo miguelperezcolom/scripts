@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # instalar certificado
 mkdir /root/.ssh
 cd /root/.ssh

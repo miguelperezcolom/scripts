@@ -1,4 +1,4 @@
-#/bin/sh
+#!/usr/bin/env bash
 
 display_usage() {
 	echo "Script para instalar aplicaciones."
