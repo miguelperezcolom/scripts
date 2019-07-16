@@ -12,9 +12,12 @@ sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_
 systemctl restart sshd
 
 # instalar utilidades
+yum -y install epel-release
 yum install -y mlocate
 yum install -y wget
-
+yum install -y firewalld
+chkconfig firewalld on
+service firewalld start
 
 # instalar java
 mkdir /home/jdks
@@ -48,7 +51,6 @@ systemctl start nginx
 ###firewall-cmd --reload
 
 # instalar certbot
-yum -y install epel-release
 yum -y install certbot-nginx
 crontab -l | { cat; echo "15 3 * * * /usr/bin/certbot renew --quiet"; } | crontab -
 

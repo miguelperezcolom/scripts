@@ -7,7 +7,7 @@ display_usage() {
 	}
 
 # if less than two arguments supplied, display usage
-if [  $# -le 4 ]
+if [  $# -ne 5 ]
 then
     display_usage
     exit 1
