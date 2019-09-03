@@ -17,3 +17,10 @@ ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/script
 ## Publicar en nginx
 
 ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp-nginx.sh | bash -s appname host domain backend_server backend_port'
+
+
+
+## Deploy
+
+cd /home/app
+./deploy.sh versión 
