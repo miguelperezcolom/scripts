@@ -23,4 +23,5 @@ ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/script
 ## Deploy
 
 cd /home/app
+
 ./deploy.sh versión 
