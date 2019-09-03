@@ -24,5 +24,5 @@ service nginx reload
 certbot -n --nginx --redirect --agree-tos --email miguelperezcolom@gmail.com -d $2.$3
 
 #ssh root@vps1 'bash -s' < installapp.sh appname
-#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp.sh | bash -s appname'
+#ssh root@vps1 'curl -s https://raw.githubusercontent.com/miguelperezcolom/scripts/master/scripts/installapp-nginx.sh | bash -s appname host domain backend_server backend_port'
 

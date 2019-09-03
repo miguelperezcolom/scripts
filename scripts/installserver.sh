@@ -39,6 +39,7 @@ rm -rf apache-maven-3.6.1-bin.tar.gz
 
 mkdir /home/m2
 ln -s /home/m2 /root/.m2
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/config/settings.xml > /home/m2/settings.xml
 
 echo 'export MAVEN_HOME=/home/apache-maven-3.6.1' >> /etc/profile.d/miguel.sh
 echo 'export PATH=$MAVEN_HOME/bin:$PATH' >> /etc/profile.d/miguel.sh
