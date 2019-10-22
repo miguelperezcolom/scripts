@@ -18,6 +18,9 @@ service xappname stop
 
 rm -rfv /home/xappname/jetty/wars/*
 
+cd /home/xappname
+curl https://devops.quotravel.eu/appconf/xappname > app.properties
+
 mvn -U org.apache.maven.plugins:maven-dependency-plugin:RELEASE:copy -Dartifact=xgrupo:xartefacto:$1:war -DoutputDirectory=/home/xappname/jetty/wars -Dmdep.stripVersion=true
 
 mkdir /home/xappname/jetty/wars/root
