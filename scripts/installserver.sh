@@ -53,7 +53,7 @@ systemctl start nginx
 
 # instalar certbot
 yum -y install certbot-nginx
-crontab -l | { cat; echo "15 3 * * * /usr/bin/certbot renew --quiet"; } | crontab -
+crontab -l | { cat; echo "15 4 * * * bash -l -c '/usr/bin/certbot renew --quiet > /root/certbot.log 2>&1 &'"; } | crontab -
 
 # abrir puertos
 firewall-cmd --add-service=http
