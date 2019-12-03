@@ -19,6 +19,8 @@ yum install -y firewalld
 chkconfig firewalld on
 service firewalld start
 
+yum install -y liberation-fonts
+
 # instalar java
 mkdir /home/jdks
 cd /home/jdks
