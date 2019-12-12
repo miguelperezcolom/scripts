@@ -21,6 +21,8 @@ service firewalld start
 
 yum install -y liberation-fonts
 yum install -y fontawesome-fonts-web
+
+# creo que basta con las ttf, pero no lo he comprobado
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.eot > /usr/share/fonts/fontawesome/fa-brands-400.eot
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.svg > /usr/share/fonts/fontawesome/fa-brands-400.svg
 curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.ttf > /usr/share/fonts/fontawesome/fa-brands-400.ttf
