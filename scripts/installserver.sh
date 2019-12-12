@@ -21,6 +21,24 @@ service firewalld start
 
 yum install -y liberation-fonts
 yum install -y fontawesome-fonts-web
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.eot > /usr/share/fonts/fontawesome/fa-brands-400.eot
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.svg > /usr/share/fonts/fontawesome/fa-brands-400.svg
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.ttf > /usr/share/fonts/fontawesome/fa-brands-400.ttf
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.woff > /usr/share/fonts/fontawesome/fa-brands-400.woff
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-brands-400.woff2 > /usr/share/fonts/fontawesome/fa-brands-400.woff2
+
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-regular-400.eot > /usr/share/fonts/fontawesome/fa-regular-400.eot
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-regular-400.svg > /usr/share/fonts/fontawesome/fa-regular-400.svg
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-regular-400.ttf > /usr/share/fonts/fontawesome/fa-regular-400.ttf
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-regular-400.woff > /usr/share/fonts/fontawesome/fa-regular-400.woff
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-regular-400.woff2 > /usr/share/fonts/fontawesome/fa-regular-400.woff2
+
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-solid-900.eot > /usr/share/fonts/fontawesome/fa-solid-900.eot
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-solid-900.svg > /usr/share/fonts/fontawesome/fa-solid-900.svg
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-solid-900.ttf > /usr/share/fonts/fontawesome/fa-solid-900.ttf
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-solid-900.woff > /usr/share/fonts/fontawesome/fa-solid-900.woff
+curl https://raw.githubusercontent.com/miguelperezcolom/scripts/master/webfonts/fa-solid-900.woff2 > /usr/share/fonts/fontawesome/fa-solid-900.woff2
+
 
 # instalar java
 mkdir /home/jdks
