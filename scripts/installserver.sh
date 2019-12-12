@@ -20,6 +20,7 @@ chkconfig firewalld on
 service firewalld start
 
 yum install -y liberation-fonts
+yum install -y fontawesome-fonts-web
 
 # instalar java
 mkdir /home/jdks
