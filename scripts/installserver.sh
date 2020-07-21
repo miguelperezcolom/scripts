@@ -19,6 +19,8 @@ yum install -y firewalld
 chkconfig firewalld on
 service firewalld start
 
+yum install -y nmap
+
 yum install -y liberation-fonts
 yum install -y fontawesome-fonts-web
 
